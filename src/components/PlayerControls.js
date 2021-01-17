@@ -1,6 +1,6 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fontawesome/react-fontawesome'
-import { faPlayer, faPause, faForwards, faBackward, faPlay } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay, faPause, faForward, faBackward } from '@fortawesome/free-solid-svg-icons';
 
 function PlayerControls() {
     return (
@@ -12,7 +12,7 @@ function PlayerControls() {
                 <FontAwesomeIcon icon={faPlay}/>
             </button>
             <button className="skip-btn">
-                <FontAwesomeIcon icon={faForwards}/>
+                <FontAwesomeIcon icon={faForward}/>
             </button>
             
         </div>
