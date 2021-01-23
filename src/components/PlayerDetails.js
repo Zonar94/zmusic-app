@@ -1,8 +1,9 @@
 import React from 'react'
 
-function PlayerDetails(props) {
+function PlayerDetails(props) {     
+                         {/*Grabs the songs and assigns the correct properties to them*/}
     return (
-        <div className="c-player--details">
+        <div className="c-player--details">                                 
             <div className="details-img">
                 <img src={props.song.img_src} alt="" />
             </div>

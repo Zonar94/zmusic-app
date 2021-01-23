@@ -3,9 +3,11 @@ import PlayerDetails from './PlayerDetails'
 import PlayerControls from './PlayerControls'
 
 function Player(props) {
+     {/*This gets the audio*/}
     const audioEl= useRef(null);
+     {/*Checks if the song is playing*/}
     const[isPlaying, setIsPlaying] = useState(false);
-
+ {/*If anything is playing, it will continue playing, if not it will pause.*/}
     useEffect(() =>{
        if (isPlaying) {
            audioEl.current.play();
@@ -15,7 +17,7 @@ function Player(props) {
        }
 
     });
-
+  {/*this function skips the song and the song index*/}
     const SkipSong = (forwards = true) => {
         if (forwards) {
         props.setCurrentSongIndex(() => {
@@ -28,6 +30,7 @@ function Player(props) {
 
             return temp;
         });
+         {/*If its at the end it goes back to the first song*/}
         } else {
             props.setCurrentSongIndex(() => {
                 let temp = props.currentSongIndex;
@@ -44,11 +47,14 @@ function Player(props) {
  
     return (
         <div className="c-player">
+             {/*Getting the props songs in our array*/}
         <audio src={props.songs[props.currentSongIndex].src} ref={audioEl}></audio>
         <h4>Playing now</h4>
         <PlayerDetails
+         /*The props from the song */
          song={props.songs[props.currentSongIndex]}
           />
+           {/*Puts the player controls in the player*/}
         <PlayerControls 
         isPlaying={isPlaying} 
         setIsPlaying={setIsPlaying} 
